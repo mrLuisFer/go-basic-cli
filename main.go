@@ -8,5 +8,5 @@ import (
 
 func main() {
 	fmt.Println("Hello World")
-	cli.Cli()
+	cli.Init()
 }
