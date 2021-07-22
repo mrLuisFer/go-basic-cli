@@ -12,7 +12,6 @@ func print (param interface{}) {
 	fmt.Printf("\n")
 }
 
-
 func Init() {
 	colors.Succes("Initializing CLI...")
 	print("Insert any of the following commands:")
