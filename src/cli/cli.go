@@ -2,6 +2,8 @@ package cli
 
 import (
 	"fmt"
+
+	stringutils "github.com/mrLuisFer/go-basic-cli/src/utils/stringUtils"
 )
 
 func print (param interface{}) {
@@ -22,7 +24,7 @@ print("Insert any of the following commands:")
 
 	var command string
 	fmt.Scan(&command)
-	command = stringutils.toLowerCase(command)
+	command = stringutils.ToLowerCase(command)
 
 	if (command == "help") {
 		print("Prints this help message")
