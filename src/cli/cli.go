@@ -14,7 +14,7 @@ func print (param interface{}) {
 
 
 func Init() {
-	colors.Warn("Initializing CLI...")
+	colors.Succes("Initializing CLI...")
 	print("Insert any of the following commands:")
 
 	var cmds = []string{"help", "add"}
