@@ -3,6 +3,7 @@ package cli
 import (
 	"fmt"
 
+	colors "github.com/mrLuisFer/go-basic-cli/src/utils/colors"
 	stringutils "github.com/mrLuisFer/go-basic-cli/src/utils/stringUtils"
 )
 
@@ -13,12 +14,12 @@ func print (param interface{}) {
 
 
 func Init() {
-	fmt.Print("Working the CLI file")
-print("Insert any of the following commands:")
+	colors.Warn("Initializing CLI...")
+	print("Insert any of the following commands:")
 
 	var cmds = []string{"help", "add"}
 	for _, cmd := range cmds {
-		fmt.Printf("%v ", cmd)
+		fmt.Printf("%v, ", cmd)
 	}
 	print(":")
 
