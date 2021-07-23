@@ -32,7 +32,8 @@ func Init() {
 	print(":")
 
 	var command string
-	fmt.Scan(&command)
+	// use Scanln to avoid multiple empty line breaks
+	fmt.Scanln(&command)
 	if(len(command) > 0) {
 		command = stringutils.ToLowerCase(command)
 	}
