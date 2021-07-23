@@ -7,11 +7,13 @@ import (
 	stringutils "github.com/mrLuisFer/go-basic-cli/src/utils/stringUtils"
 )
 
+// Paint in the terminal the parameter that is passed to it
 func print (param interface{}) {
 	fmt.Print(param)
 	fmt.Printf("\n")
 }
 
+// Initialize the CLI and the commands within it
 func Init() {
 	colors.Succes("Initializing CLI...")
 	print("Insert any of the following commands:")
