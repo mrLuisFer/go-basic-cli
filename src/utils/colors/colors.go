@@ -17,7 +17,6 @@ func Warn(msg string, newLine bool) {
 // Paint blue the text for the console
 func Info(msg string, newLine bool) {
 	blue := colors.New(colors.FgBlue).Add(colors.Bold).Set()
-	blue.Print(msg)
 	if(newLine){
 		blue.Printf("%v \n", msg)
 	} else {
@@ -27,11 +26,19 @@ func Info(msg string, newLine bool) {
 
 // Paint green the text for the console
 func Succes(msg string, newLine bool) {
-	green := colors.New(colors.FgGreen).Set()
-	green.Print(msg)
+	green := colors.New(colors.FgHiGreen).Add(colors.Bold).Set()
 	if(newLine){
 		green.Printf("%v \n", msg)
 	} else {
 		green.Print(msg)
+	}
+}
+
+func Error(msg string, newLine bool){
+	red := colors.New(colors.FgHiRed).Set()
+	if(newLine){
+		red.Printf("%v \n", msg)
+	} else {
+		red.Print(msg)
 	}
 }

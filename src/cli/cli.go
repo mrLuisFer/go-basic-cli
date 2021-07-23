@@ -33,7 +33,10 @@ func Init() {
 		colors.Warn(command, false)
 		fmt.Printf(" command selected! \n \n")
 	}
+
 	if (command == "help") {
 		commands.Help()
+	} else {
+		colors.Error("Choose an available command", false)
 	}
 }
