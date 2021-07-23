@@ -16,7 +16,7 @@ func print (param interface{}) {
 
 // Initialize the CLI and the commands within it
 func Init() {
-	colors.Succes("Initializing CLI...")
+	colors.Succes("Initializing CLI...", true)
 	print("Insert any of the following commands:")
 
 	var cmds = []string{"help", "add"}
@@ -30,8 +30,8 @@ func Init() {
 	
 	if(len(command) > 0) {
 		command = stringutils.ToLowerCase(command)
-		colors.Warn(command)
-		fmt.Println(" command selected!")
+		colors.Warn(command, false)
+		fmt.Printf(" command selected! \n \n")
 	}
 	if (command == "help") {
 		commands.Help()

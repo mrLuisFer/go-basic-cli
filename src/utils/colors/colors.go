@@ -5,19 +5,33 @@ import (
 )
 
 // Paint yellow the text for the console
-func Warn(msg string) {
+func Warn(msg string, newLine bool) {
 	yellow := colors.New(colors.FgYellow).Add(colors.Bold).Set()
-	yellow.Print(msg)
+	if(newLine){
+		yellow.Printf("%v \n", msg)
+	} else {
+		yellow.Print(msg)
+	}
 }
 
 // Paint blue the text for the console
-func Info(msg string) {
-	blue := colors.New(colors.FgBlue).Add(colors.Bold).Set().PrintlnFunc()
-	blue(msg)
+func Info(msg string, newLine bool) {
+	blue := colors.New(colors.FgBlue).Add(colors.Bold).Set()
+	blue.Print(msg)
+	if(newLine){
+		blue.Printf("%v \n", msg)
+	} else {
+		blue.Print(msg)
+	}
 }
 
 // Paint green the text for the console
-func Succes(msg string) {
-	green := colors.New(colors.FgGreen).Set().PrintlnFunc()
-	green(msg)
+func Succes(msg string, newLine bool) {
+	green := colors.New(colors.FgGreen).Set()
+	green.Print(msg)
+	if(newLine){
+		green.Printf("%v \n", msg)
+	} else {
+		green.Print(msg)
+	}
 }

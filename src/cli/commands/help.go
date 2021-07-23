@@ -6,5 +6,5 @@ import (
 
 // Execute the Help command that displays information about the CLI
 func Help() {
-	colors.Info("Prints this help message")
+	colors.Info("Prints this help message", true)
 }
