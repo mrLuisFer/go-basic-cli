@@ -14,6 +14,12 @@ func print (param interface{}) {
 	fmt.Printf("\n")
 }
 
+// Paint the text blue the command that was selected
+func printCmdSelected(cmd string){
+	colors.Info(cmd, false)
+	fmt.Printf(" command selected! \n \n")
+}
+
 // Initialize the CLI and the commands within it
 func Init() {
 	colors.Succes("Initializing CLI...", true)
@@ -27,16 +33,14 @@ func Init() {
 
 	var command string
 	fmt.Scan(&command)
-	
 	if(len(command) > 0) {
 		command = stringutils.ToLowerCase(command)
-		colors.Warn(command, false)
-		fmt.Printf(" command selected! \n \n")
 	}
 
 	if (command == "help") {
+		printCmdSelected(command)
 		commands.Help()
 	} else {
-		colors.Error("Choose an available command", false)
+		colors.Error("✘ Choose an available command!", false)
 	}
 }
