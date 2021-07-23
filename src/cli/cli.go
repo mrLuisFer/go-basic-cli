@@ -3,6 +3,7 @@ package cli
 import (
 	"fmt"
 
+	commands "github.com/mrLuisFer/go-basic-cli/src/cli/commands"
 	colors "github.com/mrLuisFer/go-basic-cli/src/utils/colors"
 	stringutils "github.com/mrLuisFer/go-basic-cli/src/utils/stringUtils"
 )
@@ -29,6 +30,6 @@ func Init() {
 	command = stringutils.ToLowerCase(command)
 
 	if (command == "help") {
-		print("Prints this help message")
+		commands.Help()
 	}
 }
