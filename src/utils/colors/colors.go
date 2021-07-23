@@ -6,8 +6,8 @@ import (
 
 // Paint yellow the text for the console
 func Warn(msg string) {
-	yellow := colors.New(colors.FgYellow).Add(colors.Bold).Set().PrintlnFunc()
-	yellow(msg)
+	yellow := colors.New(colors.FgYellow).Add(colors.Bold).Set()
+	yellow.Print(msg)
 }
 
 // Paint blue the text for the console

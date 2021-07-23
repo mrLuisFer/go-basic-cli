@@ -27,8 +27,12 @@ func Init() {
 
 	var command string
 	fmt.Scan(&command)
-	command = stringutils.ToLowerCase(command)
-
+	
+	if(len(command) > 0) {
+		command = stringutils.ToLowerCase(command)
+		colors.Warn(command)
+		fmt.Println(" command selected!")
+	}
 	if (command == "help") {
 		commands.Help()
 	}
