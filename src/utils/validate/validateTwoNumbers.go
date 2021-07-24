@@ -7,6 +7,7 @@ import (
 	colors "github.com/mrLuisFer/go-basic-cli/src/utils/colors"
 )
 
+// Validate two numbers and receive an operation which paints the result in the terminal
 func ValidateTwoNumbers(num1 int, num2 int, operation string) {
 	var error bool = false
 	
@@ -26,7 +27,7 @@ func ValidateTwoNumbers(num1 int, num2 int, operation string) {
 		colors.Succes("The result is:", false)
 		fmt.Printf(" %v \n", result)
 	} else {
-		colors.Error("Insert a valid number!", false)
+		colors.Error("✘ Insert a valid number!", false)
 		error = true
 	}	
 }

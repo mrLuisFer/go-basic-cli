@@ -34,6 +34,7 @@ func Succes(msg string, newLine bool) {
 	}
 }
 
+// Paint red text in case there is an error
 func Error(msg string, newLine bool){
 	red := colors.New(colors.FgHiRed).Set()
 	if(newLine){
