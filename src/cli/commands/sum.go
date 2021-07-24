@@ -26,6 +26,6 @@ func Sum(){
 	if (typeNumber1 == reflect.Int && typeNumber2 == reflect.Int) {
 		result := numb1 + numb2
 		colors.Succes("The result is:", false)
-		fmt.Printf(" %v", result)
+		fmt.Printf(" %v \n", result)
 	}
 }
