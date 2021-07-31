@@ -10,8 +10,7 @@ import (
 
 // Paint in the terminal the parameter that is passed to it
 func print (param interface{}) {
-	fmt.Print(param)
-	fmt.Printf("\n")
+	fmt.Printf("%v \n", param)
 }
 
 // Paint the text blue the command that was selected
