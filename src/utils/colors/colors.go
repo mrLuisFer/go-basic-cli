@@ -5,7 +5,7 @@ import (
 )
 
 // Paint yellow the text for the console
-func Warn(msg string, newLine bool) {
+func Warn(msg interface {}, newLine bool) {
 	yellow := colors.New(colors.FgYellow).Add(colors.Bold).Set()
 	if(newLine){
 		yellow.Printf("%v \n", msg)
@@ -15,7 +15,7 @@ func Warn(msg string, newLine bool) {
 }
 
 // Paint blue the text for the console
-func Info(msg string, newLine bool) {
+func Info(msg interface {}, newLine bool) {
 	blue := colors.New(colors.FgBlue).Add(colors.Bold).Set()
 	if(newLine){
 		blue.Printf("%v \n", msg)
@@ -25,7 +25,7 @@ func Info(msg string, newLine bool) {
 }
 
 // Paint green the text for the console
-func Succes(msg string, newLine bool) {
+func Succes(msg interface {}, newLine bool) {
 	green := colors.New(colors.FgHiGreen).Add(colors.Bold).Set()
 	if(newLine){
 		green.Printf("%v \n", msg)
@@ -35,7 +35,7 @@ func Succes(msg string, newLine bool) {
 }
 
 // Paint red text in case there is an error
-func Error(msg string, newLine bool){
+func Error(msg interface {}, newLine bool){
 	red := colors.New(colors.FgHiRed).Set()
 	if(newLine){
 		red.Printf("%v \n", msg)
