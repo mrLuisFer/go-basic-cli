@@ -7,12 +7,12 @@ import (
 	stringutils "github.com/mrLuisFer/go-basic-cli/src/utils/stringUtils"
 )
 
-// Paint in the terminal the parameter that is passed to it
+// Print in the terminal the parameter that is passed to it
 func print (param interface{}) {
 	fmt.Printf("%v \n", param)
 }
 
-// Paint the text blue the command that was selected
+// Print the text blue the command that was selected
 func printCmdSelected(cmd string){
 	colors.Info(cmd, false)
 	fmt.Printf(" command selected! \n \n")
@@ -37,11 +37,8 @@ func Init() error {
     return err
   }
   
-  if(len(command) > 0) {
-		command = stringutils.ToLowerCase(command)
-	}
-
   if (len(command) > 0) {
+    command = stringutils.ToLowerCase(command)
     CheckCommands(command)
   }
 
