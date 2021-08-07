@@ -19,7 +19,7 @@ func printCmdSelected(cmd string){
 }
 
 // Initialize the CLI and the commands within it
-func Init() {
+func Init() error {
 	colors.Succes("Initializing CLI...", true)
 	print("Insert any of the following commands...")
 
@@ -31,12 +31,19 @@ func Init() {
 
 	var command string
 	// use Scanln to avoid multiple empty line breaks
-	fmt.Scanln(&command)
-	if(len(command) > 0) {
+	_, err := fmt.Scanln(&command)
+  
+  if err != nil {
+    return err
+  }
+  
+  if(len(command) > 0) {
 		command = stringutils.ToLowerCase(command)
 	}
 
   if (len(command) > 0) {
     CheckCommands(command)
   }
+
+  return nil
 }
