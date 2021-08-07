@@ -3,7 +3,6 @@ package cli
 import (
 	"fmt"
 
-	commands "github.com/mrLuisFer/go-basic-cli/src/cli/commands"
 	colors "github.com/mrLuisFer/go-basic-cli/src/utils/colors"
 	stringutils "github.com/mrLuisFer/go-basic-cli/src/utils/stringUtils"
 )
@@ -22,11 +21,11 @@ func printCmdSelected(cmd string){
 // Initialize the CLI and the commands within it
 func Init() {
 	colors.Succes("Initializing CLI...", true)
-	print("Insert any of the following commands:")
+	print("Insert any of the following commands...")
 
 	var cmds = []string{"help", "sum", "create", "rename", "delete"}
 	for _, cmd := range cmds {
-		fmt.Printf("%v, ", cmd)
+		fmt.Printf("%s  ", cmd)
 	}
 	print(":")
 
@@ -37,20 +36,7 @@ func Init() {
 		command = stringutils.ToLowerCase(command)
 	}
 
-	if (command == "help") {
-		printCmdSelected(command)
-		commands.Help()
-	} else if (command == "sum"){
-		printCmdSelected(command)
-		commands.Sum()
-	} else if  (command == "create") {
-		printCmdSelected(command)
-		commands.CreateFile()
-	} else if (command == "rename") {
-    commands.RenameFile()
-  } else if (command == "delete") {
-    commands.RemoveFile()
-  } else {
-		colors.Error("✘ Choose an available command!", false)
-	}
+  if (len(command) > 0) {
+    CheckCommands(command)
+  }
 }

@@ -3,17 +3,21 @@ package commands
 import (
 	"fmt"
 	"os"
+
+	colors "github.com/mrLuisFer/go-basic-cli/src/utils/colors"
 )
 
 func RemoveFile() error {
-  fmt.Println("Insert file path")
+  colors.Info("Insert file path", true)
   var path string
   fmt.Scanln(&path)
   err := os.Remove(path)
   
   if(err != nil) {
-    fmt.Println(err)
+    colors.Error(fmt.Sprintf("✘ %v",err), true)
     return err
+  } else {
+    colors.Succes(fmt.Sprintf("File %s removed", path), true)
   }
   return nil
 }
