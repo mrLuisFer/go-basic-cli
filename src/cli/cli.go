@@ -24,7 +24,7 @@ func Init() {
 	colors.Succes("Initializing CLI...", true)
 	print("Insert any of the following commands:")
 
-	var cmds = []string{"help", "sum", "create", "rename"}
+	var cmds = []string{"help", "sum", "create", "rename", "delete"}
 	for _, cmd := range cmds {
 		fmt.Printf("%v, ", cmd)
 	}
@@ -48,6 +48,8 @@ func Init() {
 		commands.CreateFile()
 	} else if (command == "rename") {
     commands.RenameFile()
+  } else if (command == "delete") {
+    commands.RemoveFile()
   } else {
 		colors.Error("✘ Choose an available command!", false)
 	}
